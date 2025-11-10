@@ -1,0 +1,18 @@
+{
+  "name": "@oracle-systems/crypto-scanner",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Oracle Systems Crypto Scanner - Real-time signal detection for cryptocurrency markets",
+  "scripts": {
+    "dev:api": "node api/index.js",
+    "dev:worker": "node worker/index.js"
+  },
+  "dependencies": {
+    "fastify": "^4.25.0",
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
