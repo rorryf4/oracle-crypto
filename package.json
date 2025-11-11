@@ -1,18 +1,29 @@
 {
-  "name": "@oracle-systems/crypto-scanner",
+  "name": "@aether-labs/oracle-systems",
   "version": "0.1.0",
-  "type": "module",
-  "description": "Oracle Systems Crypto Scanner - Real-time signal detection for cryptocurrency markets",
+  "private": true,
+  "description": "Aether Labs Crypto Scanner - Multi-timeframe setup detection for leverage traders",
   "scripts": {
-    "dev:api": "node api/index.js",
-    "dev:worker": "node worker/index.js"
+    "dev": "pnpm --parallel --stream -r dev",
+    "dev:ingestor": "pnpm --filter @aether/ingestor dev",
+    "dev:engine": "pnpm --filter @aether/engine dev",
+    "build": "pnpm -r build",
+    "migrate": "node scripts/migrate.js",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "clean": "pnpm -r clean && rm -rf node_modules"
   },
   "dependencies": {
-    "fastify": "^4.25.0",
-    "dotenv": "^16.3.1",
-    "axios": "^1.6.2"
+    "pg": "^8.11.3",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
   }
 }
